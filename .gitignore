@@ -4,3 +4,5 @@ __pycache__/
 .conda
 .conda/*
 .env
+.pythonlibs
+.pythonlibs/*
