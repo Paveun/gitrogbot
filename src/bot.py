@@ -1,4 +1,5 @@
 from src.weather import get_weather
+from src.frogfacts import get_frogfact
 import discord
 from dotenv import load_dotenv
 import os
@@ -72,6 +73,15 @@ def run_discord_bot():
             await ctx.response.send_message(text, ephemeral=True)
         else:
             await ctx.response.send_message(text)
+    
+    @tree.command(
+        name = "frogfact",
+        description = "Give me a frog fact",
+        guild=discord.Object(id=GUILD_ID)
+    )
+    async def frogfact(ctx):
+        fact = get_frogfact()
+        await ctx.response.send_message(fact)
             
     client.run(TOKEN)
     
