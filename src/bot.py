@@ -79,7 +79,7 @@ def run_discord_bot():
                 description="Give me a frog fact",
                 guild=discord.Object(id=GUILD_ID))
   async def frogfact(ctx):
-    fact = src.get_frogfact()
+    fact = src.get_frogfact('resources/responses.txt')
     await ctx.response.send_message(fact)
 
   client.run(TOKEN)
