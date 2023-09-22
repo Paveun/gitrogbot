@@ -82,4 +82,13 @@ def run_discord_bot():
     fact = src.get_frogfact('resources/responses.txt')
     await ctx.response.send_message(fact)
 
+  @tree.command(name="choose",
+                description="Chose between 2 options",
+                guild=discord.Object(id=GUILD_ID))
+  async def choose(ctx, option1: str, option2: str):
+    options = [option1, option2]
+    choice = random.choices(options, k=1)
+    await ctx.response.send_message(
+        f"Between {option1} and {option2}, I choose: {choice[0]}")
+
   client.run(TOKEN)
