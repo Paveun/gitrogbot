@@ -41,6 +41,7 @@ def run_discord_bot():
                 guild=discord.Object(id=GUILD_ID))
   async def first_command(interaction):
     await interaction.response.send_message("Croak.")
+    pass
 
   @tree.command(name="roll",
                 description="Roll some dice",
@@ -74,6 +75,7 @@ def run_discord_bot():
       await ctx.response.send_message(text, ephemeral=True)
     else:
       await ctx.response.send_message(text)
+    pass
 
   @tree.command(name="frogfact",
                 description="Give me a frog fact",
@@ -81,6 +83,7 @@ def run_discord_bot():
   async def frogfact(ctx):
     fact = src.get_frogfact('resources/responses.txt')
     await ctx.response.send_message(fact)
+    pass
 
   @tree.command(name="choose",
                 description="Chose between 2 options",
@@ -90,5 +93,6 @@ def run_discord_bot():
     choice = random.choices(options, k=1)
     await ctx.response.send_message(
         f"Between {option1} and {option2}, I choose: {choice[0]}")
+    pass
 
   client.run(TOKEN)
