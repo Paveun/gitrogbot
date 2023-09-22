@@ -38,7 +38,7 @@ def run_discord_bot():
 
   @tree.command(name="hello",
                 description="Just being polite",
-                guild=discord.Object(id=GUILD_ID))
+                guild=None)
   async def first_command(interaction):
     await interaction.response.send_message("Croak.")
     pass
