@@ -3,3 +3,4 @@ services:
   main:
     build: .
     container_name: gitrogbot
+    restart: always
